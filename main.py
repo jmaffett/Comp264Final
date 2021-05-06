@@ -12,7 +12,9 @@ response = requests.request("GET", url, headers=headers)
 
 file = response.text.split(":")
 quote = file[3]
-tweet = quote[:-6]
+auth = file[8]
+author = auth[1:-7]
+tweet = quote[:-6] + " - " + author
 
 
 Key = "LWFU6WbGgvXKwfV7BUs4ERule"
